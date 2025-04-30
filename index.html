@@ -37,10 +37,21 @@
       <h2>Coming Soon</h2>
       <p>This site will grow over time. Check back for updates!</p>
     </section>
+
+    <!-- Dark Mode Toggle Button -->
+    <button id="darkModeToggle">Toggle Dark Mode</button>
   </main>
 
   <footer>
     <p>© 2025 Magic Dippy Egg Online</p>
   </footer>
+
+  <script>
+    // Dark Mode Toggle Script
+    const toggleButton = document.getElementById('darkModeToggle');
+    toggleButton.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+  </script>
 </body>
 </html>

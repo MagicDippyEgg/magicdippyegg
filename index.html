@@ -46,12 +46,22 @@
     <p>© 2025 Magic Dippy Egg Online</p>
   </footer>
 
-  <script>
-    // Dark Mode Toggle Script
-    const toggleButton = document.getElementById('darkModeToggle');
-    toggleButton.addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-    });
-  </script>
+<script>
+  // Check if dark mode was previously enabled and apply it
+  const isDarkMode = localStorage.getItem('darkMode') === 'true';
+  if (isDarkMode) {
+    document.body.classList.add('dark-mode');
+  }
+
+  const toggleButton = document.getElementById('darkModeToggle');
+  toggleButton.addEventListener('click', () => {
+    // Toggle dark mode
+    document.body.classList.toggle('dark-mode');
+    
+    // Save the dark mode state to localStorage
+    const darkModeEnabled = document.body.classList.contains('dark-mode');
+    localStorage.setItem('darkMode', darkModeEnabled);
+  });
+</script>
 </body>
 </html>

@@ -23,15 +23,14 @@
     </section>
   
 <section id="scratch-info">
-  <h2>Scratch Info</h2>
-  <img id="scratch-pfp" src="" alt="Profile picture" width="90" height="90"><br>
-  <strong>Username:</strong> <span id="scratch-username"></span><br>
-  <strong>About Me:</strong> <span id="scratch-bio"></span><br>
-  <strong>What I'm Working On:</strong> <span id="scratch-status"></span><br>
-  <strong>Joined:</strong> <span id="scratch-joined"></span><br>
-  <strong>Followers:</strong> <span id="scratch-followers"></span><br>
-  <strong>Total Projects:</strong> <span id="scratch-projects"></span><br>
+  <h2>My Scratch Info</h2>
+  <img id="scratch-pfp" src="" alt="Profile picture" width="90" height="90">
+  <p><strong>Username:</strong> <span id="scratch-username"></span></p>
+  <p><strong>About Me:</strong> <span id="scratch-bio"></span></p>
+  <p><strong>What I'm Working On:</strong> <span id="scratch-status"></span></p>
+  <p><strong>Joined Scratch on:</strong> <span id="scratch-joined"></span></p>
 </section>
+
 
 
 
@@ -56,7 +55,6 @@
     });
   }
 
-  // Fetch and display Scratch user info
 fetch("/api/scratch")
   .then(response => response.json())
   .then(data => {
@@ -75,6 +73,8 @@ fetch("/api/scratch")
       infoSection.innerHTML += "<p style='color:red;'>Failed to load Scratch data.</p>";
     }
   });
+
+
 
 </script>
 

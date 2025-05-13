@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Scratch - Magic Dippy Egg Online</title>
+    <link rel="icon" href="https://github.com/MagicDippyEgg/magicdippyegg.github.io/blob/main/pfp.jpg?raw=true" type="image/jpeg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>My Scratch Account</h1>
+    <p>Here is some info about my scratch account!</p>
+  </header>
+  
+
+
+  <main>
+        <section>
+      <h2>Home</h2>
+      <ul>
+        <li><a href="index.html">Go Back Home</a></li>
+      </ul>
+    </section>
+  
+<section id="scratch-info">
+  <h2>MagicDippyEgg on Scratch</h2>
+  <img id="scratch-pfp" src="" alt="Profile picture" width="90" height="90">
+  <p><strong>Username:</strong> <span id="scratch-username"></span></p>
+  <p><strong>About Me:</strong> <span id="scratch-bio"></span></p>
+  <p><strong>What I'm Working On:</strong> <span id="scratch-status"></span></p>
+  <p><strong>Joined Scratch on:</strong> <span id="scratch-joined"></span></p>
+</section>
+
+
+  <footer>
+    <p>© 2025 Magic Dippy Egg Online</p>
+  </footer>
+  
+  <script>
+  // Check if dark mode was previously enabled and apply it
+  const isDarkMode = localStorage.getItem('darkMode') === 'true';
+  if (isDarkMode) {
+    document.body.classList.add('dark-mode');
+  }
+
+  const toggleButton = document.getElementById('darkModeToggle');
+  toggleButton.addEventListener('click', () => {
+    // Toggle dark mode
+    document.body.classList.toggle('dark-mode');
+    
+    // Save the dark mode state to localStorage
+    const darkModeEnabled = document.body.classList.contains('dark-mode');
+    localStorage.setItem('darkMode', darkModeEnabled);
+  });
+  
+    fetch("https://api.scratch.mit.edu/users/magicdippyegg")
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById("scratch-username").textContent = data.username;
+      document.getElementById("scratch-bio").textContent = data.profile.bio;
+      document.getElementById("scratch-status").textContent = data.profile.status;
+
+      // Format the join date nicely
+      const joinedDate = new Date(data.history.joined);
+      document.getElementById("scratch-joined").textContent = joinedDate.toDateString();
+
+      // Set profile image
+      document.getElementById("scratch-pfp").src = data.profile.images["90x90"];
+    })
+    .catch(error => {
+      console.error("Error fetching Scratch profile data:", error);
+      document.getElementById("scratch-info").innerHTML = "<p>Failed to load Scratch data.</p>";
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Me - Magic Dippy Egg Online</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="https://github.com/MagicDippyEgg/magicdippyegg.github.io/blob/main/pfp.jpg?raw=true" type="image/jpeg">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Add any specific styles for the contact page here if needed */
+    /* For now, relying on the main style.css */
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Contact Me</h1>
+    <p>Get in touch with Kai!</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Home</h2>
+      <ul>
+        <li><a href="index.html">Go Back Home</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>How to Reach Me</h2>
+      <p>The best ways to contact me are through my online communities:</p>
+      <ul>
+        <li>
+          <strong>Discord Server:</strong> Join the Magic Dippy Egg Discord server to chat and connect with me and others.
+          <br><a href="https://discord.gg/UUhfMCbjGj" target="_blank">Join the Discord Server</a>
+        </li>
+        <li>
+          <strong>YouTube Channel:</strong> Leave comments on my videos or connect through the community tab on my YouTube channel.
+          <br><a href="https://www.youtube.com/@MagicDippyEgg" target="_blank">Visit Magic Dippy Egg on YouTube</a>
+        </li>
+        </ul>
+        <p>I look forward to hearing from you!</p>
+    </section>
+
+    <button id="darkModeToggle">Toggle Dark Mode</button>
+
+  </main>
+
+  <footer>
+    <p>2025 Magic Dippy Egg Online</p>
+  </footer>
+
+<script>
+  // Check if dark mode was previously enabled and apply it
+  const isDarkMode = localStorage.getItem('darkMode') === 'true';
+  if (isDarkMode) {
+    document.body.classList.add('dark-mode');
+  }
+
+  const toggleButton = document.getElementById('darkModeToggle');
+  // Check if the button exists before adding the event listener
+  if (toggleButton) {
+    toggleButton.addEventListener('click', () => {
+      // Toggle dark mode
+      document.body.classList.toggle('dark-mode');
+
+      // Save the dark mode state to localStorage
+      const darkModeEnabled = document.body.classList.contains('dark-mode');
+      localStorage.setItem('darkMode', darkModeEnabled);
+    });
+  }
+</script>
+</body>
+</html>

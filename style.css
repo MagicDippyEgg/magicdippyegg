@@ -37,7 +37,6 @@ header a {
   transition: color 0.3s, text-decoration 0.3s;
 }
 
-/* Glowing effect only on hover */
 @keyframes linkGlow {
   0% {
     text-shadow: 0 0 4px #66ccff, 0 0 8px #66ccff;

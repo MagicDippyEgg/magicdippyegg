@@ -117,7 +117,7 @@
   </main>
 
 <footer>
-  <p>Magic Dippy Egg Online <a href="contact.html">Contact Me</a></p>
+  <p>Magic Dippy Egg Online <a href="contact.html" id="contactFooterLink">Contact Me</a></p>
 </footer>
 <script>
   // Check if dark mode was previously enabled and apply it
@@ -136,6 +136,15 @@
       // Save the dark mode state to localStorage
       const darkModeEnabled = document.body.classList.contains('dark-mode');
       localStorage.setItem('darkMode', darkModeEnabled);
+    });
+  }
+
+  // Add event listener for the footer contact link
+  const contactFooterLink = document.getElementById('contactFooterLink');
+  if (contactFooterLink) {
+    contactFooterLink.addEventListener('click', (event) => {
+      event.preventDefault(); // Prevent the default link behavior
+      alert("Hey Kai, you're already on the contact page!"); // Show the popup
     });
   }
 </script>

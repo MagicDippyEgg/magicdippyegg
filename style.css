@@ -69,15 +69,15 @@ header a:hover {
 }
 
 footer a {
-  color: #4a00e0;
+  color: #bbbbbb;
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s, text-shadow 0.3s;
+  transition: color 0.3s;
 }
 
 footer a:hover {
-  color: #6a00f0;
-  text-shadow: 0 0 4px #a370ff, 0 0 8px #a370ff;
+  color: #ffffff;
+  text-decoration: underline;
 }
 
 

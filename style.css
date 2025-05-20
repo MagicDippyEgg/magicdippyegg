@@ -31,11 +31,38 @@ header {
 }
 
 header a {
-  color: #66ccff; /* Light blue link on purple background */
+  color: #66ccff;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s, text-decoration 0.3s;
 }
+
+/* Glowing effect only on hover */
+@keyframes linkGlow {
+  0% {
+    text-shadow: 0 0 4px #66ccff, 0 0 8px #66ccff;
+  }
+  50% {
+    text-shadow: 0 0 6px #aaddff, 0 0 12px #aaddff;
+  }
+  100% {
+    text-shadow: 0 0 4px #66ccff, 0 0 8px #66ccff;
+  }
+}
+
+header a {
+  color: #66ccff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+header a:hover {
+  color: #aaddff;
+  text-decoration: underline;
+  animation: linkGlow 1.5s ease-in-out infinite;
+}
+
 
 header a:hover {
   color: #aaddff;

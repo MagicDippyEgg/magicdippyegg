@@ -30,6 +30,19 @@ header {
   transition: background-color 0.3s;
 }
 
+header a {
+  color: #66ccff; /* Light blue link on purple background */
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s, text-decoration 0.3s;
+}
+
+header a:hover {
+  color: #aaddff;
+  text-decoration: underline;
+}
+
+
 body.dark-mode header {
   background-color: #6a00f0;
 }

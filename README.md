@@ -8,7 +8,7 @@ This particular repository contains the code for my personal website:
 
 ## ✨ Magic Dippy Egg Online ✨
 
-My website is a hub for all my creative projects and online activities. You can check it out live here:
+My website is a hub for all my projects and online activities. You can check it out live here:
 [https://magicdippyegg.vercel.app/](https://magicdippyegg.vercel.app/)
 
 On the website, you'll find:

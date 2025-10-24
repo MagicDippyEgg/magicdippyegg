@@ -7,6 +7,35 @@
 	<meta name="application-name" content="Magic Dippy Egg Online">
     <link rel="icon" href="/icon.png" type="image/png">
   <link rel="stylesheet" href="../style.css">
+  
+  <style>
+    /* Styling for the video container for rounded corners and shadow */
+    .styled-video-container {
+        /* This background ensures the corners are visible */
+        background-color: #f4f4f4; 
+        border-radius: 12px;
+        /* Subtle purple glow for a stylized look */
+        box-shadow: 0 4px 15px rgba(74, 0, 224, 0.4), 
+                    0 0 0 2px rgba(74, 0, 224, 0.1); /* Thin border-like line */
+        overflow: hidden; /* Ensures the video corners are rounded with the container */
+        margin: 20px 0;
+        transition: box-shadow 0.3s ease-in-out;
+    }
+
+    /* Dark mode adjustments for the container */
+    body.dark-mode .styled-video-container {
+        background-color: #222; 
+        /* Adjust shadow for dark mode to be lighter */
+        box-shadow: 0 4px 15px rgba(106, 0, 240, 0.5), 
+                    0 0 0 2px rgba(106, 0, 240, 0.2); 
+    }
+
+    /* Target the video element itself to ensure it fills the container and has a subtle shadow on its own */
+    .styled-video-container video {
+        display: block; /* Removes any extra spacing below the video */
+    }
+  </style>
+  
 </head>
 <body>
   <header>
@@ -14,11 +43,9 @@
     <p>Info stuff</p>
   </header>
   
-
-
   <main>
-  <div class="video-embed">
-<video width="100%" height="80%" controls="" autoplay="" muted="">
+  <div class="styled-video-container">
+<video width="100%" height="auto" controls="" autoplay="" muted="">
     <source src="https://rick.nerial.uk/video.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
@@ -36,14 +63,18 @@
   }
 
   const toggleButton = document.getElementById('darkModeToggle');
-  toggleButton.addEventListener('click', () => {
-    // Toggle dark mode
-    document.body.classList.toggle('dark-mode');
-    
-    // Save the dark mode state to localStorage
-    const darkModeEnabled = document.body.classList.contains('dark-mode');
-    localStorage.setItem('darkMode', darkModeEnabled);
-  });
+  // NOTE: I didn't see a 'darkModeToggle' element in your provided HTML, 
+  // but I kept the script logic assuming it exists elsewhere or will be added.
+  if (toggleButton) {
+      toggleButton.addEventListener('click', () => {
+        // Toggle dark mode
+        document.body.classList.toggle('dark-mode');
+        
+        // Save the dark mode state to localStorage
+        const darkModeEnabled = document.body.classList.contains('dark-mode');
+        localStorage.setItem('darkMode', darkModeEnabled);
+      });
+  }
 </script>
 </body>
 </html>

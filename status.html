@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Status Pages - Magic Dippy Egg Online</title>
+    <meta property="og:site_name" content="Magic Dippy Egg Online">
+	<meta name="application-name" content="Magic Dippy Egg Online">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/icon.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Specific styles for the status page */
+    .status-card {
+      background-color: white;
+      padding: 20px;
+      margin-bottom: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: box-shadow 0.3s;
+    }
+
+    .status-card:hover {
+        box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    }
+
+    body.dark-mode .status-card {
+      background-color: #333; /* Dark mode match */
+      box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+    }
+
+    .status-card h2 {
+      color: #4a00e0;
+      margin-top: 0;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+    }
+
+    body.dark-mode .status-card h2 {
+        color: #7d44ff; /* Lighter purple for dark mode */
+        border-bottom-color: #555;
+    }
+    
+    .status-link-button {
+        display: inline-block;
+        background-color: #4a00e0;
+        color: white;
+        padding: 10px 15px;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+        transition: background-color 0.3s;
+        margin-top: 10px;
+    }
+
+    .status-link-button:hover {
+        background-color: #6a00f0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Service Status Pages</h1>
+    <p>Check the current uptime and operational status of my online services and projects.</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Home</h2>
+      <ul>
+        <li><a href="index.html">Go Back Home</a></li>
+      </ul>
+    </section>
+
+    <section class="status-card">
+      <h2>Uptime Robot Status Page</h2>
+      <p>This page shows the status for projects monitored by Uptime Robot. Click the link below to view the status directly on their site.</p>
+      <a href="https://stats.uptimerobot.com/42qKZl0zuq" target="_blank" class="status-link-button">View Uptime Robot Status</a>
+    </section>
+
+    <section class="status-card">
+      <h2>HetrixTools Status Page</h2>
+      <p>This page displays the status for services monitored using HetrixTools. Click the link below to view the status directly on their site.</p>
+      <a href="https://hetrixtools.com/r/3156d4bbd47e726f554932736cbdcb9f/" target="_blank" class="status-link-button">View HetrixTools Status</a>
+    </section>
+
+  </main>
+
+<footer>
+  <p>Magic Dippy Egg Online <a href="contact.html">Contact Me</a></p>
+</footer>
+
+<script>
+  // Dark mode setup
+  const isDarkMode = localStorage.getItem('darkMode') === 'true';
+  if (isDarkMode) {
+    document.body.classList.add('dark-mode');
+  }
+
+  const toggleButton = document.getElementById('darkModeToggle');
+  // Check if the button exists before adding the event listener
+  if (toggleButton) {
+    toggleButton.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      const darkModeEnabled = document.body.classList.contains('dark-mode');
+      localStorage.setItem('darkMode', darkModeEnabled);
+    });
+  }
+</script>
+</body>
+</html>

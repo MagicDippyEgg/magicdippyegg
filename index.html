@@ -62,15 +62,6 @@
 
 <p>Visits: <span id="visits">loading...</span></p>
 
-<script>
-fetch("https://api.countapi.xyz/hit/magicdippyegg-vercel/app")
-  .then(res => res.json())
-  .then(data => {
-    document.getElementById("visits").textContent = data.value;
-  });
-</script>
-
-
 </footer>
 
 <script>

@@ -53,8 +53,10 @@
         margin-top: 10px;
     }
 
-    .status-link-button:hover {
+    .status-link-button:hover,
+    .status-link-button:focus {
         background-color: #6a00f0;
+        color: white;
     }
   </style>
 </head>
@@ -82,6 +84,12 @@
       <h2>HetrixTools Status Page</h2>
       <p>This page displays the status for services monitored using HetrixTools. Click the link below to view the status directly on their site.</p>
       <a href="https://hetrixtools.com/r/3156d4bbd47e726f554932736cbdcb9f/" target="_blank" class="status-link-button">View HetrixTools Status</a>
+    </section>
+
+    <section class="status-card">
+      <h2>AtomPing Status Page</h2>
+      <p>This page shows the status for services monitored using AtomPing. Click the link below to view the status directly on their site.</p>
+      <a href="https://atomping.com/status/page" target="_blank" class="status-link-button">View Atomping Status</a>
     </section>
 
   </main>
